@@ -1,12 +1,6 @@
-const songs = [
-  { title: "Blinding Lights", artist: "The Weeknd", album: "After Hours", cover: "images/cover1.jpg", src: "music/song1.mp3" },
-  { title: "Levitating", artist: "Dua Lipa", album: "Future Nostalgia", cover: "images/cover2.jpg", src: "music/song2.mp3" },
-  { title: "Stay", artist: "Justin Bieber", album: "Justice", cover: "images/cover3.jpg", src: "music/song3.mp3" },
-  { title: "Heat Waves", artist: "Glass Animals", album: "Dreamland", cover: "images/cover4.jpg", src: "music/song4.mp3" }
-];
-
 const input = document.getElementById("searchInput");
 const grid = document.getElementById("resultsGrid");
+
 
 /* ================= STATE ================= */
 let currentTab = "songs";
@@ -23,6 +17,7 @@ function render(list) {
   list.forEach(song => {
     const card = document.createElement("div");
     card.className = "song-card";
+
     card.innerHTML = `
       <img src="${song.cover}">
       <h4>${song.title}</h4>
@@ -33,6 +28,14 @@ function render(list) {
     card.onclick = () => {
       localStorage.setItem("currentSong", JSON.stringify(song));
       window.location.href = "index.html";
+    };
+
+    // 🎵 Open album page (FIXED)
+    card.querySelector("h4").onclick = (e) => {
+      e.stopPropagation();
+      localStorage.setItem("selectedAlbum", song.album);
+      localStorage.setItem("allSongs", JSON.stringify(songs));
+      window.location.href = "album.html";
     };
 
     grid.appendChild(card);
@@ -62,13 +65,6 @@ function filterAndRender() {
 
 /* ================= SEARCH INPUT ================= */
 input.addEventListener("input", filterAndRender);
-card.querySelector("h4").onclick = (e) => {
-  e.stopPropagation();
-  localStorage.setItem("selectedAlbum", song.album);
-  localStorage.setItem("allSongs", JSON.stringify(songs));
-  window.location.href = "album.html";
-};
-
 
 /* ================= TABS ================= */
 document.querySelectorAll(".tab").forEach(tab => {

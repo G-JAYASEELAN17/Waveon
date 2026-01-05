@@ -15,14 +15,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /* ================= SONG DATA ================= */
-  const songs = [
+    const songs = [
     { title: "Blinding Lights", artist: "The Weeknd", cover: "images (4).jpg", src: "blending.mp3" },
-    { title: "Levitating", artist: "Dua Lipa", cover: "../images/cover2.jpg", src: "../music/song2.mp3" },
-    { title: "Stay", artist: "Justin Bieber", cover: "../images/cover3.jpg", src: "../music/song3.mp3" },
-    { title: "Heat Waves", artist: "Glass Animals", cover: "../images/cover4.jpg", src: "../music/song4.mp3" },
-    { title: "Perfect", artist: "Ed Sheeran", cover: "../images/cover5.jpg", src: "../music/song5.mp3" },
-    { title: "Believer", artist: "Imagine Dragons", cover: "../images/cover6.jpg", src: "../music/song6.mp3" }
+    { title: "Levitating", artist: "Dua Lipa", cover: "Levitating.webp", src: "Levitating.mp3" },
+    { title: "Stay", artist: "Justin Bieber", cover: "image 1.png", src: "stay.mp3" },
+    { title: "Heat Waves", artist: "Glass Animals", cover: "Heat Waves.webp", src: "Glass_animal_-_Heat_Waves.mp3" },
+    { title: "Perfect", artist: "Ed Sheeran", cover: "Perfect.webp", src: "Perfect.mp3" },
+    { title: "Believer", artist: "Imagine Dragons", cover: "Believer.webp", src: "Believer.mp3" }
   ];
+
 
   const savedContainer = document.getElementById("libraryPlaylists");
   const likedContainer = document.getElementById("likedSongs");
