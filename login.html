@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Waveon | Login </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="login-container">
+  <div class="login-card">
+
+    <!-- LOGO -->
+    <h1 class="logo">Waveon</h1>
+    <p class="subtitle">Log in to continue</p>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" autocomplete="off">
+
+      <!-- EMAIL -->
+      <input
+        type="email"
+        id="loginEmail"
+        placeholder="Email"
+        required
+      />
+
+      <!-- PASSWORD -->
+      <div class="password-box">
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Password"
+          required
+        />
+        <!-- 🔥 IMPORTANT: data-target used by auth.js -->
+        <span
+          class="togglePwd"
+          data-target="loginPassword"
+          title="Show / Hide Password"
+        >👁</span>
+      </div>
+
+      <!-- OPTIONS -->
+      <div class="login-options">
+        <label class="remember">
+          <input type="checkbox" id="rememberMe">
+          Remember me
+        </label>
+
+        <a href="#" id="forgotPwd">Forgot password?</a>
+      </div>
+
+      <!-- SUBMIT -->
+      <button type="submit">Log In</button>
+    </form>
+
+    <div class="divider">or</div>
+
+    <!-- GOOGLE (UI ONLY) -->
+    <button class="google-btn">🔐 Continue with Google</button>
+
+    <!-- SIGNUP -->
+    <p class="signup-text">
+      Don’t have an account?
+      <a href="signup.html">Sign up</a>
+    </p>
+
+  </div>
+</div>
+
+<!-- AUTH SCRIPT (ONLY ONE SOURCE OF TRUTH) -->
+<script src="auth.js"></script>
+
+<!-- UI HELPERS ONLY (NO LOGIN LOGIC HERE) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* FORGOT PASSWORD (UI ONLY) */
+  const forgot = document.getElementById("forgotPwd");
+  if (forgot) {
+    forgot.addEventListener("click", (e) => {
+      e.preventDefault();
+      alert("Password reset feature coming soon 🔐");
+    });
+  }
+
+  /* REMEMBER ME AUTOFILL */
+  const remembered = localStorage.getItem("rememberUser");
+  if (remembered) {
+    document.getElementById("loginEmail").value = remembered;
+    document.getElementById("rememberMe").checked = true;
+  }
+
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Waveon |Playlists</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h1 class="logo">Waveon</h1>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="search.html">🔍 Search</a>
+    <a href="library.html">📚 Your Library</a>
+    <a class="active">🎵 Playlists</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="settings.html">⚙️ Settings</a>
+  </nav>
+</aside>
+<!-- Back Button -->
+<button id="backBtn" class="back-btn">
+  <img src="images.png" alt="Back">
+</button>
+
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HERO HEADER -->
+  <section class="playlist-hero">
+    <p class="hero-label">PLAYLISTS</p>
+    <h1>Your Playlists</h1>
+    <p class="hero-sub">Create, manage and enjoy your music</p>
+
+    <button id="openModal" class="create-btn">＋ Create Playlist</button>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="collection">
+    <h3>Your Collection</h3>
+
+    <div id="emptyState" class="empty-state">
+      🎧 No playlists yet<br>
+      <span>Create your first playlist</span>
+    </div>
+
+    <div id="playlistList" class="playlist-grid"></div>
+  </section>
+
+</main>
+
+<!-- CREATE PLAYLIST MODAL -->
+<div class="modal" id="playlistModal">
+  <div class="modal-box">
+    <h3>Create Playlist</h3>
+    <input type="text" id="playlistName" placeholder="My Playlist">
+    <div class="modal-actions">
+      <button id="cancel">Cancel</button>
+      <button id="create">Create</button>
+    </div>
+  </div>
+</div>
+
+<!-- PLAYLIST SONG VIEW -->
+<section id="playlistView" style="display:none">
+  <h2 id="playlistTitle"></h2>
+  <div id="playlistSongs" class="card-row"></div>
+</section>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="playlist.js"></script>
+</body>
+</html>

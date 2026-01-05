@@ -1,0 +1,212 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background: radial-gradient(circle at top, #1db95433, #000 65%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= LOGIN CONTAINER ================= */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+/* ================= CARD ================= */
+.login-card {
+  background: linear-gradient(180deg, #121212, #0d0d0d);
+  padding: 42px 40px;
+  border-radius: 18px;
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  color: #1DB954;
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+/* ================= TEXT ================= */
+.subtitle {
+  color: #b3b3b3;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+/* ================= INPUTS ================= */
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  background: #181818;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1DB954;
+  box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.35);
+  background: #1b1b1b;
+}
+
+/* ================= PASSWORD BOX ================= */
+.password-box {
+  position: relative;
+}
+
+.togglePwd {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 15px;
+  color: #9a9a9a;
+  user-select: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.togglePwd:hover {
+  color: #1DB954;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* ================= LOGIN OPTIONS ================= */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin: 8px 0 18px;
+  color: #aaa;
+}
+
+.login-options a {
+  color: #1DB954;
+  text-decoration: none;
+}
+
+.login-options a:hover {
+  text-decoration: underline;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ================= BUTTON ================= */
+button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #1DB954, #1ed760);
+  border: none;
+  border-radius: 999px;
+  color: #000;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(29, 185, 84, 0.45);
+}
+
+/* ================= DIVIDER ================= */
+.divider {
+  margin: 22px 0;
+  font-size: 13px;
+  color: #666;
+}
+
+/* ================= GOOGLE BUTTON ================= */
+.google-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid #333;
+  font-weight: 500;
+}
+
+.google-btn:hover {
+  background: #1a1a1a;
+}
+
+/* ================= SIGNUP TEXT ================= */
+.signup-text {
+  margin-top: 22px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.signup-text a {
+  color: #1DB954;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* ================= PASSWORD STRENGTH ================= */
+.strength {
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+#strengthBar {
+  height: 100%;
+  width: 0%;
+  background: red;
+  border-radius: 6px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+#strengthText {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #b3b3b3;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

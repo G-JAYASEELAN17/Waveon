@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Waveon |Profile </title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+  
+ <!-- Back Button -->
+<button id="backBtn" class="back-btn">
+  <img src="images.png" alt="Back">
+</button>
+
+  <div class="profile-wrapper">
+    <div class="profile-card">
+
+      <!-- AVATAR -->
+      <div class="avatar-wrapper">
+        <img id="profileAvatar" src="images/default-avatar.png" />
+        <label class="upload-btn">
+          Change
+          <input type="file" id="avatarInput" accept="image/*" hidden />
+        </label>
+      </div>
+
+      <!-- FORM -->
+      <form id="profileForm">
+
+        <div class="field">
+          <label>Username</label>
+          <input type="text" id="profileName" required />
+        </div>
+
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="profileEmail" required />
+        </div>
+
+        <div class="field">
+          <label>Gender</label>
+          <select id="profileGender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- DATE OF BIRTH -->
+        <div class="field">
+          <label>Date of Birth</label>
+          <input type="date" id="profileDOB" />
+        </div>
+
+        <div class="field">
+          <label>Address</label>
+          <input type="text" id="profileAddress" />
+        </div>
+
+        <!-- CURRENT PASSWORD -->
+        <div class="field password-field">
+          <label>Current Password</label>
+          <input type="password" id="currentPassword" />
+          <span class="togglePwd" data-target="currentPassword">👁</span>
+        </div>
+
+        <!-- NEW PASSWORD -->
+        <div class="field password-field">
+          <label>New Password</label>
+          <input type="password" id="newPassword" />
+          <span class="togglePwd" data-target="newPassword">👁</span>
+        </div>
+
+        <!-- CONFIRM PASSWORD -->
+        <div class="field password-field">
+          <label>Confirm Password</label>
+          <input type="password" id="confirmPassword" />
+          <span class="togglePwd" data-target="confirmPassword">👁</span>
+        </div>
+
+        <!-- FORGOT PASSWORD -->
+        <p class="forgot-text">
+          <a href="#" id="forgotPassword">Forgot password?</a>
+        </p>
+
+        <button type="submit" class="save-btn">Save Changes</button>
+      </form>
+
+      <button id="logoutBtn" class="logout-btn">⏻ Logout</button>
+
+    </div>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

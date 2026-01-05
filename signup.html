@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title> Waveon |Sign Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+
+
+<div class="signup-container">
+  <h1 class="logo">Waveon</h1>
+  <p class="subtitle">Create your account</p>
+
+  <form id="signupForm">
+
+    <input
+      type="text"
+      id="signupName"
+      placeholder="Username"
+      required
+    />
+
+    <input
+      type="email"
+      id="signupEmail"
+      placeholder="Email"
+      required
+    />
+
+    <!-- PASSWORD -->
+    <div class="password-box">
+      <input
+        type="password"
+        id="signupPassword"
+        placeholder="Password"
+        required
+      />
+      <span class="togglePwd" data-target="signupPassword">👁</span>
+    </div>
+
+    <!-- CONFIRM PASSWORD -->
+    <div class="password-box">
+      <input
+        type="password"
+        id="signupConfirmPassword"
+        placeholder="Confirm Password"
+        required
+      />
+      <span class="togglePwd" data-target="signupConfirmPassword">👁</span>
+    </div>
+
+    <!-- PASSWORD STRENGTH -->
+    <div class="strength">
+      <div id="strengthBar"></div>
+    </div>
+    <p id="strengthText"></p>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <p class="signup-text">
+    Already have an account?
+    <a href="login.html">Log in</a>
+  </p>
+</div>
+
+
+
+
+<script src="auth.js"></script>
+</body>
+</html>

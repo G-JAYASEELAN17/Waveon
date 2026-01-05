@@ -1,0 +1,216 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(29,185,84,0.18), #000 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1DB954;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.back-btn img {
+  width: 18px;
+}
+
+.back-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(29,185,84,.45);
+}
+
+/* ================= WRAPPER ================= */
+.profile-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ================= CARD ================= */
+.profile-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(180deg, #181818, #121212);
+  padding: 42px 36px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.9),
+    inset 0 1px 0 rgba(255,255,255,.04);
+  animation: fadeUp .6s ease;
+}
+
+/* ================= AVATAR ================= */
+.avatar-wrapper {
+  position: relative;
+  width: 110px;
+  margin: 0 auto 26px;
+}
+
+.avatar-wrapper img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1DB954;
+}
+
+.upload-btn {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background: #1DB954;
+  color: #000;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.upload-btn:hover {
+  background: #1ed760;
+  transform: scale(1.05);
+}
+
+/* ================= FORM ================= */
+.field {
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 6px;
+}
+
+/* INPUTS */
+input,
+select {
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 12px;
+  border: 1px solid #2e2e2e;
+  background: #141414;
+  color: #fff;
+  font-size: 14px;
+  transition: all .25s ease;
+}
+
+input::placeholder {
+  color: #777;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #1DB954;
+  background: #181818;
+  box-shadow: 0 0 0 2px rgba(29,185,84,.35);
+}
+
+/* ================= PASSWORD ================= */
+.password-field {
+  position: relative;
+}
+
+.togglePwd {
+  position: absolute;
+  right: 14px;
+  top: 38px;
+  cursor: pointer;
+  color: #b3b3b3;
+  font-size: 14px;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.togglePwd:hover {
+  color: #1DB954;
+  transform: scale(1.15);
+}
+
+/* ================= BUTTONS ================= */
+.save-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1DB954, #1ed760);
+  color: #000;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(29,185,84,.45);
+}
+
+/* LOGOUT */
+.logout-btn {
+  width: 100%;
+  margin-top: 16px;
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 13px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all .25s ease;
+}
+
+.logout-btn:hover {
+  background: #e02424;
+  border-color: #e02424;
+  color: #fff;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 480px) {
+  .profile-card {
+    padding: 32px 24px;
+  }
+}

@@ -1,0 +1,932 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= BASE ================= */
+body {
+  display: flex;
+  background: linear-gradient(180deg, #1a1a1a 0%, #121212 45%);
+  color: white;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #000, #0d0d0d);
+  padding: 26px 18px;
+}
+
+.logo {
+  color: #1DB954;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  color: #b3b3b3;
+  text-decoration: none;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  transition: 0.25s;
+}
+
+nav a:hover,
+nav a.active {
+  background: rgba(255,255,255,0.08);
+  color: white;
+}
+
+/* ================= MAIN ================= */
+.main {
+  flex: 1;
+  padding: 30px 42px 130px;
+  overflow-y: auto;
+}
+
+/* ================= TOP BAR ================= */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.top-bar input {
+  width: 460px;
+  max-width: 100%;
+  padding: 14px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(29,185,84,0.35);
+  background: rgba(0,0,0,0.45);
+  color: white;
+}
+
+.top-bar input::placeholder {
+  color: #888;
+}
+
+.user-actions,
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logout-btn {
+  border: 1px solid #333;
+  background: transparent;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.logout-btn:hover {
+  background: #1DB954;
+  color: black;
+}
+
+/* ================= HERO (HOME ONLY) ================= */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #4b3cff, #000);
+  border-radius: 26px;
+  padding: 42px;
+  margin-bottom: 46px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin: 12px 0;
+}
+
+.hero-text .tag {
+  color: #d1d1d1;
+  font-size: 14px;
+}
+
+.play-hero {
+  margin-top: 18px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  background: #1DB954;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  margin-bottom: 44px;
+}
+
+.section h2 {
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: linear-gradient(180deg, #1b1b1b, #151515);
+  padding: 18px;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  background: #242424;
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.card h4 {
+  font-size: 15px;
+}
+
+.card small {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* ================= PLAY BUTTON ================= */
+.play-btn {
+  position: absolute;
+  bottom: 80px;
+  right: 18px;
+  background: #1DB954;
+  border: none;
+  border-radius: 50%;
+  padding: 14px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: 0.25s;
+}
+
+.card:hover .play-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ================= PLAYER ================= */
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 240px;
+  right: 0;
+  height: 90px;
+  background: linear-gradient(180deg, #181818, #000);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.player-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-left img {
+  width: 55px;
+  border-radius: 8px;
+}
+
+.player-center button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+/* ================= BACK BUTTON ================= */
+.back-btn {
+  position: fixed;
+  bottom: 22px;
+  left: 22px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #1DB954, #1ed760);
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 8px 20px rgba(29,185,84,0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Hover animation */
+.back-btn:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 28px rgba(29,185,84,0.55);
+  background: linear-gradient(135deg, #1ed760, #1DB954);
+}
+
+/* Click animation */
+.back-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 6px 14px rgba(29,185,84,0.4);
+}
+
+/* Optional arrow icon image support */
+.back-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: #181818;
+  padding: 25px;
+  border-radius: 14px;
+  width: 320px;
+}
+
+.playlist-option {
+  padding: 12px;
+  margin-top: 8px;
+  background: #222;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.playlist-option:hover {
+  background: #1DB954;
+  color: black;
+}
+/* ================= SONG BOX STYLE ================= */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  padding-top: 10px;
+}
+
+.card {
+  background: linear-gradient(180deg, #181818, #141414);
+  border-radius: 16px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  background: #242424;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+}
+
+/* COVER IMAGE */
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* SONG TITLE */
+.card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #fff;
+}
+
+/* ARTIST */
+.card small {
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+/* OPTIONAL: PLAY ICON ON HOVER */
+.card::after {
+  content: "▶";
+  position: absolute;
+  bottom: 70px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  background: #1DB954;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: 0.3s ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =====================================================
+   FINAL VISUAL REFINEMENTS (APPEND ONLY)
+   DOES NOT CHANGE EXISTING CODE
+===================================================== */
+
+/* Improve overall depth like screenshot */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(255,255,255,0.06),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+/* Sidebar logo spacing polish */
+.logo {
+  letter-spacing: 0.5px;
+}
+
+/* Search bar glow */
+.top-bar input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(29,185,84,0.25);
+}
+
+/* Hero depth enhancement */
+.hero {
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* Hero text spacing */
+.hero-text h1,
+.hero-text h2 {
+  line-height: 1.1;
+}
+
+/* Play button hover polish */
+.play-hero:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(29,185,84,0.45);
+}
+
+/* Section titles like screenshot */
+.section h2,
+.section h3 {
+  letter-spacing: 0.4px;
+}
+
+/* Fix broken image icon look */
+.card img {
+  background: linear-gradient(135deg, #1e1e1e, #2a2a2a);
+}
+
+/* Card text clarity */
+.card h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Card hover glow */
+.card:hover {
+  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
+}
+
+/* Play icon glow */
+.card:hover::after {
+  box-shadow: 0 10px 24px rgba(29,185,84,0.45);
+}
+
+/* Player bar separation */
+.player {
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.7);
+}
+
+/* Player buttons polish */
+.player-center button:hover {
+  color: #1DB954;
+}
+
+/* Smooth scrollbar */
+.main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 10px;
+}
+
+/* Mobile safety without layout change */
+@media (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .player {
+    left: 0;
+  }
+}
+/* =====================================================
+   🎬 SECTION & CARD ANIMATIONS (APPEND ONLY)
+===================================================== */
+
+/* Section title animation */
+.section h2,
+.section h3 {
+  animation: fadeSlideIn 0.6s ease forwards;
+}
+
+/* Cards container stagger effect */
+.cards .card,
+.card-row .card {
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+  animation: cardFadeUp 0.6s ease forwards;
+}
+
+/* Stagger delay for each card */
+.cards .card:nth-child(1),
+.card-row .card:nth-child(1) { animation-delay: 0.05s; }
+.cards .card:nth-child(2),
+.card-row .card:nth-child(2) { animation-delay: 0.1s; }
+.cards .card:nth-child(3),
+.card-row .card:nth-child(3) { animation-delay: 0.15s; }
+.cards .card:nth-child(4),
+.card-row .card:nth-child(4) { animation-delay: 0.2s; }
+.cards .card:nth-child(5),
+.card-row .card:nth-child(5) { animation-delay: 0.25s; }
+.cards .card:nth-child(6),
+.card-row .card:nth-child(6) { animation-delay: 0.3s; }
+
+/* Hover micro-interaction (smooth) */
+.card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* Text fade for song title & artist */
+.card h4,
+.card small {
+  animation: textFade 0.8s ease forwards;
+}
+
+/* ================= KEYFRAMES ================= */
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Optional: subtle floating feel on hover */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+/* =====================================================
+   ❤️ LIKE / 💾 SAVE BUTTONS (APPEND ONLY)
+===================================================== */
+
+.card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover .card-actions {
+  opacity: 1;
+}
+
+.like-btn,
+.save-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+.like-btn:hover,
+.save-btn:hover {
+  background: #1DB954;
+  color: black;
+}
+
+/* Liked state */
+.like-btn.liked {
+  background: #1DB954;
+  color: black;
+}
+
+/* Saved state */
+.save-btn.saved {
+  background: #1DB954;
+  color: black;
+}
+/* ================= HEART PULSE ================= */
+.like-btn.liked {
+  animation: heartPulse 0.35s ease;
+}
+
+@keyframes heartPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* ================= LIBRARY CARD ACTIONS ================= */
+
+.card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: 0.25s ease;
+}
+
+.card:hover .card-actions {
+  opacity: 1;
+}
+
+.card-actions button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.75);
+  color: white;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.card-actions button:hover {
+  background: #1DB954;
+  color: black;
+}
+
+.queue-btn {
+  font-size: 14px;
+}
+/* =====================================================
+   🎬 FOR YOU SECTION ANIMATION (APPEND ONLY)
+===================================================== */
+
+/* Initial state for animation */
+#forYou .card {
+  opacity: 0;
+  transform: translateY(25px) scale(0.96);
+  animation: forYouFadeUp 0.6s ease forwards;
+}
+
+/* Stagger effect */
+#forYou .card:nth-child(1) { animation-delay: 0.05s; }
+#forYou .card:nth-child(2) { animation-delay: 0.1s; }
+#forYou .card:nth-child(3) { animation-delay: 0.15s; }
+#forYou .card:nth-child(4) { animation-delay: 0.2s; }
+#forYou .card:nth-child(5) { animation-delay: 0.25s; }
+#forYou .card:nth-child(6) { animation-delay: 0.3s; }
+
+/* Hover micro-interaction enhancement */
+#forYou .card:hover {
+  transform: translateY(-8px) scale(1.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Animation keyframes */
+@keyframes forYouFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ================= LIBRARY PLAYER CONTROLS ================= */
+
+.library-controls {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 20px 0 40px;
+}
+
+.library-controls button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  
+  background: #1DB954;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.library-controls button:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 22px rgba(29,185,84,0.5);
+}
+
+/* ================= NOW PLAYING HIGHLIGHT ================= */
+
+.card.now-playing {
+  outline: 2px solid #1DB954;
+  box-shadow: 0 0 0 3px rgba(29,185,84,0.25);
+}
+
+.card.now-playing::before {
+  content: "🎧 Now Playing";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1DB954;
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* ================= LIBRARY VOLUME ================= */
+
+.library-volume {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.library-volume input {
+  width: 160px;
+  accent-color: #1DB954;
+}
+
+/* =====================================================
+   🎧 PLAYER CONTROL POSITION FIX (LIBRARY / HOME)
+===================================================== */
+
+/* Main player container */
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 240px; /* width of sidebar */
+  right: 0;
+  height: 90px;
+  background: linear-gradient(180deg, #181818, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* CENTER CONTROLS (PREV / PLAY / NEXT) */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Control buttons */
+.controls button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #1DB954;
+  border: none;
+  color: #000;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 18px rgba(29,185,84,0.5);
+}
+
+/* LEFT SONG INFO */
+.player-left {
+  position: absolute;
+  left: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* RIGHT VOLUME CONTROL */
+.player-right {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.player-right input[type="range"] {
+  width: 120px;
+  accent-color: #1DB954;
+}
+#playlistView {
+  display: none;
+  margin-top: 30px;
+}
+
+#playlistView.active {
+  display: block;
+}
+
+#playlistSongs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* ================= CREATIVE IMAGE UPGRADE ================= */
+
+/* SONG CARD IMAGE */
+.card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 12px;
+
+  /* Premium look */
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.6),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+
+/* IMAGE HOVER EFFECT */
+.card:hover img {
+  transform: scale(1.08) rotate(-0.6deg);
+  box-shadow:
+    0 22px 50px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(29,185,84,0.4);
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/* GLOW BORDER EFFECT */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(29,185,84,0.25),
+    rgba(75,60,255,0.15),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ================= HERO IMAGE ENHANCEMENT ================= */
+
+.hero img {
+  width: 260px;
+  border-radius: 22px;
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.85),
+    0 0 0 1px rgba(255,255,255,0.08);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    filter 0.5s ease;
+}
+
+/* HERO IMAGE HOVER */
+.hero:hover img {
+  transform: scale(1.06) rotate(1deg);
+  box-shadow:
+    0 40px 100px rgba(0,0,0,0.9),
+    0 0 30px rgba(29,185,84,0.35);
+  filter: brightness(1.05) contrast(1.1);
+}
+
+/* ================= SOFT REFLECTION EFFECT ================= */
+.card img::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.18),
+    transparent 45%
+  );
+  opacity: 0.3;
+}
+

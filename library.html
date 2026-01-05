@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Waveon |Your Library</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+
+  <!-- Back Button -->
+<button id="backBtn" class="back-btn">
+  <img src="images.png" alt="Back" />
+</button>
+
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="sidebar">
+  <h1 class="logo">Waveon</h1>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="search.html">🔍 Search</a>
+    <a href="library.html" class="active">📚 Your Library</a>
+    <a href="playlist.html">🎵 Playlists</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="settings.html">⚙️ Settings</a>
+  </nav>
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="main">
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <input
+      type="search"
+      id="librarySearch"
+      class="library-search"
+      placeholder="Search your library"
+      autocomplete="off"
+      aria-label="Search Library"
+    />
+
+    <div class="top-right">
+      <span id="welcomeUser" class="welcome-user"></span>
+      <button id="logoutBtn" class="logout-btn">⏻ Logout</button>
+    </div>
+  </div>
+
+  <section class="section">
+  <h2>❤️ Liked Songs</h2>
+  <div class="cards" id="likedSongs"></div>
+</section>
+
+
+  <!-- PLAYLISTS -->
+  <section class="section">
+    <h2>Your Playlists</h2>
+    <div class="cards" id="libraryPlaylists"></div>
+  </section>
+
+  <!-- RECENTLY PLAYED -->
+  <section class="section">
+    <h2>Recently Played</h2>
+    <div class="cards" id="libraryRecent"></div>
+  </section>
+
+  <!-- ================= LIBRARY PLAYER CONTROLS ================= -->
+<div class="library-controls">
+  <button id="libPrev">⏮</button>
+  <button id="libPlay">▶</button>
+  <button id="libNext">⏭</button>
+</div>
+
+<!-- ================= LIBRARY VOLUME ================= -->
+<div class="library-volume">
+  <span>🔊</span>
+  <input type="range" id="libraryVolume" min="0" max="100">
+</div>
+
+</main>
+
+
+<script src="library.js"></script>
+</body>
+</html>

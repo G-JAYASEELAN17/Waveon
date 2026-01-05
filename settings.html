@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Waveon | Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+
+<!-- Back Button -->
+<button id="backBtn" class="back-btn">
+  <img src="images.png" alt="Back">
+</button>
+
+<div class="settings-wrapper">
+    
+  <!-- SIDEBAR -->
+  <aside class="settings-sidebar">
+    <h1 class="logo">Waveon</h1>
+    <button class="tab active" data-tab="account">Account</button>
+    <button class="tab" data-tab="privacy">Privacy</button>
+    <button class="tab" data-tab="theme">Theme</button>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="settings-content">
+
+    <!-- ACCOUNT -->
+    <section class="panel active" id="account">
+      <h2>Account</h2>
+      <p class="desc">Manage your account information</p>
+
+      <div class="setting-item">
+        <span>Email</span>
+        <small id="accountEmail"></small>
+      </div>
+
+      <div class="setting-item">
+        <span>Username</span>
+        <small id="accountName"></small>
+      </div>
+        
+    </section>
+
+    <!-- PRIVACY -->
+    <section class="panel" id="privacy">
+      <h2>Privacy</h2>
+      <p class="desc">Control your privacy preferences</p>
+
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+        <p>Make profile private</p>
+      </label>
+
+      <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider"></span>
+        <p>Show listening activity</p>
+      </label>
+    </section>
+
+    <!-- THEME -->
+    <section class="panel" id="theme">
+      <h2>Theme</h2>
+      <p class="desc">Choose your appearance</p>
+
+      <div class="theme-toggle">
+        <span>🌙 Dark Mode</span>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+
+<script src="settings.js"></script>
+</body>
+</html>

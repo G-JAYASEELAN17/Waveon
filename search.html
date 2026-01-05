@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Waveon | Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="search.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h1 class="logo">Waveon</h1>
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a class="active">🔍 Search</a>
+    <a href="library.html">📚 Library</a>
+    <a href="playlist.html">🎵 Playlists</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="settings.html">⚙️ Settings</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- SEARCH HEADER -->
+  <div class="search-header">
+   <input 
+  type="text" 
+  id="searchInput"
+  class="search-input"
+  placeholder="What do you want to listen to?"
+>
+
+<div class="results-grid" id="resultsGrid"></div>
+
+  <!-- TITLE -->
+  <h2 class="search-title">Search Results</h2>
+
+  <!-- RESULTS -->
+  <div class="results-grid">
+    <!-- Card -->
+    <div class="song-card">
+      <img src="images/cover1.jpg">
+      <h4>Blinding Lights</h4>
+      <small>The Weeknd</small>
+    </div>
+
+    <div class="song-card">
+      <img src="images/cover2.jpg">
+      <h4>Levitating</h4>
+      <small>Dua Lipa</small>
+    </div>
+
+    <div class="song-card">
+      <img src="images/cover3.jpg">
+      <h4>Stay</h4>
+      <small>Justin Bieber</small>
+    </div>
+
+    <div class="song-card">
+      <img src="images/cover4.jpg">
+      <h4>Heat Waves</h4>
+      <small>Glass Animals</small>
+    </div>
+  </div>
+
+  <div class="tabs">
+  <button class="tab active" data-type="songs">Songs</button>
+  <button class="tab" data-type="artists">Artists</button>
+  <button class="tab" data-type="albums">Albums</button>
+</div>
+
+
+</main>
+
+
+<!-- BACK BUTTON -->
+<button class="back-btn" onclick="history.back()">←</button>
+
+<script src="search.js"></script>
+
+</body>
+</html>

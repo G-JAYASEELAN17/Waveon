@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Waveon | Home</title>
+  <link rel="icon" href="img2.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <h1 class="logo">Waveon</h1>
+  <nav>
+    <a class="active">🏠 Home</a>
+    <a href="search.html">🔍 Search</a>
+    <a href="library.html">📚 Library</a>
+    <a href="playlist.html">🎵 Playlists</a>
+    <a href="profile.html">👤 Profile</a>
+    <a href="settings.html">⚙️ Settings</a>
+  </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- TOP BAR -->
+  <header class="top-bar">
+    <input type="search" placeholder="Search songs, artists, albums..." />
+    <div class="user-actions">
+      <span id="welcomeUser">Hi, Jay</span>
+      <button class="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="tag">New Trending</p>
+      <h1>Different World</h1>
+      <p class="sub">Album by Alan Walker</p>
+      <button class="play-hero">▶ Play</button>
+    </div>
+    <img src="images/hero.jpg" alt="Album Cover">
+  </section>
+
+  <!-- FOR YOU -->
+  <section class="section">
+    <h2>For You</h2>
+    <div class="card-row" id="forYou"></div>
+  </section>
+
+  <!-- RECENTLY PLAYED -->
+  <section class="section">
+    <h2>Recently Played</h2>
+    <div class="card-row" id="recent"></div>
+  </section>
+
+</main>
+
+<!-- PLAYER -->
+<footer class="player">
+  <div class="player-left">
+    <img id="cover" src="images/cover1.jpg">
+    <div>
+      <p id="title">Song Title</p>
+      <small id="artist">Artist</small>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="shuffleBtn">🔀</button>
+    <button id="prev">⏮</button>
+    <button id="play">▶</button>
+    <button id="next">⏭</button>
+    <button id="repeatBtn">🔁</button>
+  </div>
+
+  <div class="player-right">
+    <input type="range">
+  </div>
+</footer>
+
+<!-- ADD TO PLAYLIST MODAL (ONLY ONE – FIXED) -->
+<div class="modal" id="addToPlaylistModal">
+  <div class="modal-content">
+    <h3>Add to Playlist</h3>
+    <div id="playlistOptions"></div>
+    <button id="cancelAdd">Cancel</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

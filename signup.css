@@ -1,0 +1,178 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  background: radial-gradient(circle at top, rgba(29, 185, 84, 0.18), #000 65%);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ================= SIGNUP CONTAINER ================= */
+.signup-container {
+  width: 100%;
+  max-width: 360px;
+  padding: 38px 32px;
+  background: linear-gradient(180deg, #181818, #111);
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  animation: fadeIn 0.6s ease;
+}
+
+/* ================= LOGO ================= */
+.logo {
+  color: #1db954;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+/* ================= SUBTITLE ================= */
+.subtitle {
+  color: #d1d1d1;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* ================= INPUTS ================= */
+input {
+  width: 100%;
+  padding: 13px 15px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid #2e2e2e;
+  background-color: #141414;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: #8d8d8d;
+  font-weight: 400;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1db954;
+  background: #181818;
+  box-shadow: 0 0 0 2px rgba(29, 185, 84, 0.35);
+}
+
+/* ================= PASSWORD BOX ================= */
+.password-box {
+  position: relative;
+}
+
+.togglePwd {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 16px;
+  color: #b3b3b3;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.togglePwd:hover {
+  color: #1db954;
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* ================= BUTTON ================= */
+button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 18px;
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  color: #000;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(29, 185, 84, 0.45);
+}
+
+/* ================= EXTRA OPTIONS ================= */
+.extra-options,
+.signup-text {
+  color: #cfcfcf;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.signup-text a {
+  color: #1db954;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* ================= GOOGLE BUTTON ================= */
+#google-btn {
+  background: transparent;
+  border: 1px solid #333;
+  color: #fff;
+  margin-top: 12px;
+}
+
+#google-btn:hover {
+  background: #1a1a1a;
+}
+
+/* ================= PASSWORD STRENGTH ================= */
+.strength {
+  height: 6px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+#strengthBar {
+  height: 100%;
+  width: 0%;
+  background: red;
+  border-radius: 6px;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+#strengthText {
+  font-size: 12px;
+  margin-top: 6px;
+  color: #b3b3b3;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
